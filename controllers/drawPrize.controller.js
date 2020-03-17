@@ -37,6 +37,7 @@ const createAndUpdate = async (req, res) => {
     handleError(e, res);
   }
 };
+
 module.exports = {
-  updatePrizePool: createAndUpdate,
+  createAndUpdate,
 };

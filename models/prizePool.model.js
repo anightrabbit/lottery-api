@@ -25,6 +25,10 @@ const PrizePoolSchema = new Schema(
     	unique: true,
     	required: [true, 'prizeNo is required!'],
     },
+    checkStatus: {
+      type: Boolean, // 奖品被领取后，要更新
+      default: false,
+    },
   },
   {
     timestamps: {
