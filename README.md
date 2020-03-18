@@ -3,7 +3,7 @@
 ## 功能实现
 
 ### config目录，API配置信息
-+ prizeData.js文件配置奖池信息
++ prizeData.js文件配置奖池信息，各种需求限制自由配置，开启中间件，自由搭配。
 
 ### models目录，MonogoDB数据模型
 + prizeActivity.model.js记录抽奖活动信息
@@ -28,5 +28,3 @@
 | memberId|number|否|会员Id|
 | activity|string|否|活动名称|
 | code|string|是|渠道|
-
-

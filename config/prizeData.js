@@ -2,11 +2,11 @@ module.exports = {
 	"fuck3yue": [{
 		// drawLimitTime: 2, // 2分钟内只允许抽奖一次
 		total: 9421,
-		drawLimitTotal: 10,
-		drawLimitDay: 3,
-		drawLimitPoint: 100,
-		startDate: '2020-03-01',
-		endDate: '2020-03-31',
+		drawLimitTotal: 10,// 参与抽奖总次数限制
+		drawLimitDay: 3, // 每天参与抽奖次数限制
+		drawLimitPoint: 100,// 参与抽奖每次需要消耗积分数量
+		startDate: '2020-03-01',// 抽奖活动开始时间
+		endDate: '2020-03-31',// 抽奖活动结束时间
 		prizeSetting: [{
 			level: 1,
 			text: '免费全球游78天',
