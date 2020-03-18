@@ -2,22 +2,28 @@
 // 实现：用随机数生成的一个pool范围内的number，对应奖池的prizeNo
 // https://mathjs.org/docs/reference/functions/pickRandom.html
 
-const math =  require('mathjs');
-
-const prizePoolModel = require('../models/prizePool.model');
+const math = require('mathjs');
 
 const pickRandom = (prizeTokenArray) => prizeTokenArray.length ?
 	math.pickRandom(prizeTokenArray) : -1;
 
-async function drawPrize (req, res, next) {
+async function drawPrize(req, res, next) {
 	try {
-		const prizeToken = pickRandom(res.restPrizePool);
-		res.send({
-			prizeToken
-		});
+		const restPrizeNoList = req.restPrizeNoList;
+		if (restPrizeNoList.length) {
+			const prizeToken = pickRandom(req.restPrizeNoList);
+			const prizeInfo = req.restPrizePool.find(item => item.prizeNo === prizeToken);
+			req.prizeInfo = prizeInfo;
+		} else {
+			// 奖池已空
+			return res.send({
+				msg: '谢谢参与',
+				data: null,
+				prizeToken: -1,
+			});
+		}
 		next();
-	}
-	catch(e) {
+	} catch (e) {
 		throw new Error(e);
 	}
 }
