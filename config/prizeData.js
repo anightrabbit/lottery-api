@@ -1,4 +1,4 @@
-const data = {
+module.exports = {
 	"fuck3yue": [{
 		// drawLimitTime: 2, // 2分钟内只允许抽奖一次
 		total: 9421,
@@ -7,7 +7,7 @@ const data = {
 		drawLimitPoint: 100,
 		startDate: '2020-03-01',
 		endDate: '2020-03-31',
-		prizePool: [{
+		prizeSetting: [{
 			level: 1,
 			text: '免费全球游78天',
 			type: 'form',
@@ -21,7 +21,7 @@ const data = {
 			level: 3,
 			text: '免费住酒店3晚',
 			type: 'form',
-			total: 15，
+			total: 15,
 		},{
 			level: 4,
 			text: '奖励5000积分',
@@ -60,5 +60,3 @@ const data = {
 		}],
 	}],
 };
-
-module.exports = data;

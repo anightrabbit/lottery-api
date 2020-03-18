@@ -11,7 +11,9 @@ const routes = new Router();
 
 routes
 	.route('/luckyDraw')
-	.post(checkMemberAuth,
+	.get((req,res,next) => res.send('good luck'))
+	.post(
+		checkMemberAuth,
 		checkFreeCode,
 		checkMemberRestPoint,
 		checkRestPrizePool,
@@ -20,6 +22,10 @@ routes
 
 routes
 	.route('/updatePrizePool')
-	.post(Controller.createAndUpdate);
+	.post(Controller.createAndUpdateForPrizePool);
+
+routes
+	.route('/updateActivity')
+	.post(Controller.createAndUpdateForActivity);
 
 module.exports = routes;

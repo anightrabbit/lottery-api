@@ -4,9 +4,9 @@ const Schema = mongoose.Schema;
 
 const PrizeActivitySchema = new Schema(
   {
-    activityCode: {
+    activity: {
       type: String,
-      required: [true, 'activityCode is required!'],
+      required: [true, 'activity is required!'],
     },
     startDate: {
     	type: Date,// 参与抽奖的免费code

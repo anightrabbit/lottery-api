@@ -6,12 +6,12 @@ const PrizePoolSchema = new Schema(
   {
     prizeLevel: {
     	type: Number,
-    	default: 0, // 参与奖
+    	default: 0, // 未中奖
     	required: [true, 'prizeLevel is required!'],
     },
     prizeType: {
     	type: String,
-      enum: ['form', 'coupon', 'point'], 
+      enum: ['form', 'coupon', 'point', 'lucky'], 
       required: [true, 'prizeType is required!'],
       // 奖品领取方式：表单填写联系方式，发放优惠券券码，发放积分
     },

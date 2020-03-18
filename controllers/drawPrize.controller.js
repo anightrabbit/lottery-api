@@ -1,4 +1,6 @@
-const Model = require('../models/prizePool.model');
+const prizePoolModel = require('../models/prizePool.model');
+const prizeActivityModel = require('../models/prizeActivity.model');
+
 // res错误
 const handleError = (error, res) =>
   res.send({
@@ -14,30 +16,52 @@ const handleSuccess = (params, res) => {
   };
   res.send(result);
 };
-const createHandle = async (req, res) => {
+const createHandleActivity = async (req, res) => {
   const body = req.body;
   // 批量插入
-  const record = await Model.insertMany(body);
-  return !record
-    ? handleError(record, res)
-    : handleSuccess(
-        {
-          msg: '添加成功',
-          // data: record,
-        },
-        res,
-        req,
-      );
+  const record = await prizeActivityModel.insertMany(body);
+  return !record ?
+    handleError(record, res) :
+    handleSuccess({
+        msg: '添加成功',
+        // data: record,
+      },
+      res,
+      req,
+    );
 };
-// 批量插奖品数据进奖池
-const createAndUpdate = async (req, res) => {
+const createHandlePool = async (req, res) => {
+  const body = req.body;
+  // 批量插入
+  const record = await prizePoolModel.insertMany(body);
+  return !record ?
+    handleError(record, res) :
+    handleSuccess({
+        msg: '添加成功',
+        // data: record,
+      },
+      res,
+      req,
+    );
+};
+
+const createAndUpdateForPrizePool = async (req, res) => {
   try {
-    createHandle(req, res);
+    createHandlePool(req, res);
+  } catch (e) {
+    handleError(e, res);
+  }
+};
+
+const createAndUpdateForActivity = async (req, res) => {
+  try {
+    createHandleActivity(req, res);
   } catch (e) {
     handleError(e, res);
   }
 };
 
 module.exports = {
-  createAndUpdate,
+  createAndUpdateForPrizePool,
+  createAndUpdateForActivity
 };
