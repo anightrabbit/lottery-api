@@ -1,6 +1,7 @@
 module.exports = {
 	"fuck3yue": [{
 		// drawLimitTime: 2, // 2分钟内只允许抽奖一次
+		freeCode: ['hello','github'],
 		total: 9421,
 		drawLimitTotal: 10,// 参与抽奖总次数限制
 		drawLimitDay: 3, // 每天参与抽奖次数限制

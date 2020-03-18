@@ -7,7 +7,6 @@
     "updatedb": "node ./config/updatedb"
   },
   "dependencies": {
-    "async": "^3.2.0",
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",

@@ -6,6 +6,7 @@ const checkRestPrizePool = require('../middlewares/checkRestPrizePool');
 const checkMemberRestPoint = require('../middlewares/checkMemberRestPoint');
 const drawPrize = require('../middlewares/drawPrize');
 const updateMemberDrawRecord = require('../middlewares/updateMemberDrawRecord');
+const checkActivityDate = require('../middlewares/checkActivityDate');
 
 const routes = new Router();
 
@@ -14,6 +15,7 @@ routes
 	.get((req,res,next) => res.send('good luck'))
 	.post(
 		checkMemberAuth,
+		checkActivityDate,
 		checkFreeCode,
 		checkMemberRestPoint,
 		checkRestPrizePool,

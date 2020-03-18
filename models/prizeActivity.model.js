@@ -9,7 +9,7 @@ const PrizeActivitySchema = new Schema(
       required: [true, 'activity is required!'],
     },
     startDate: {
-    	type: Date,// 参与抽奖的免费code
+    	type: Date,
     	required: [true, 'startDate is required!'],
     },
     endDate: {
@@ -28,6 +28,7 @@ const PrizeActivitySchema = new Schema(
     drawLimitPoint: {
       type: Number, // 抽奖一次消耗多少积分
     },
+    freeCode: [], // 参与抽奖的免费code
   },
   {
     timestamps: {
