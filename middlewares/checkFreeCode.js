@@ -5,7 +5,7 @@ async function checkFreeCode(req, res, next) {
 		const {
 			code
 		} = req.body;
-		req.isFreeCode = req.activityInfo.freeCode && req.activityInfo.freeCode.includes(code);
+		req.isFreeCode = req.activityInfo.freeCode && req.activityInfo.freeCode.indexOf(code) > -1;
 		next();
 	} catch (e) {
 		throw new Error(e);
