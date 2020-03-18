@@ -28,3 +28,26 @@
 | memberId|number|否|会员Id|
 | activity|string|否|活动名称|
 | code|string|是|渠道|
+
+    {
+        "memberId": 15,
+        "activity":"fuck3yue",
+        "code":"hello"
+    }
+
+返回参数：
+
+    {
+        "data": {
+            "prizeLevel": 8,
+            "checkStatus": false,
+            "_id": "5e71caf9a1b3fc3522f23ad0",
+            "prizeType": "point",
+            "prizeText": "奖励300积分",
+            "prizeNo": 3613,
+            "__v": 0,
+            "created_at": "2020-03-18T07:17:13.827Z",
+            "updated_at": "2020-03-18T07:17:13.827Z"
+        },
+        "msg": "🎉🎉🎉,中奖了呢"
+    }
