@@ -13,8 +13,11 @@
 
 ### middlewares目录，中间件
 + checkMemberAuth.js检查用户抽奖权限，非登陆会员不可参与抽奖
++ checkActivityDate.js检查活动有效期
++ checkActivityLimit.js检查活动参与次数限制
 + checkFreeCode.js 检查渠道免费抽奖码
 + checkMemberDrawRecord.js检查会员抽奖记录，限制抽奖次数
++ checkMemberLuckyRecord.js检查会员中奖记录
 + checkMemberRestPoint.js检查会员剩余积分是否足够参与一次抽奖
 + drawPrize.js 生成随机数对应奖池的奖品编号，确定是否中奖
 + updateMemberDrawRecord.js 更新会员抽奖记录

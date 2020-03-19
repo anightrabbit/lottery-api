@@ -6,14 +6,14 @@ const prizePoolModel = require('../models/prizePool.model');
 
 async function updateMemberDrawRecord(req, res, next) {
 	try {
-		const prizeNo = req.prizeInfo.prizeNo;
+		const { prizeNo, prizeType } = req.prizeInfo;
 		const body = req.body;
 		// 奖池信息更新
 		updatePrizePool(prizeNo, {
 			checkStatus: true
 		});
 		// 保存会员抽奖记录
-		createPrizeRecord({memberId: body.memberId, prizeNo});
+		createPrizeRecord({memberId: body.memberId, prizeNo, prizeType});
 		return res.send({
 			data: req.prizeInfo,
 			msg:'🎉🎉🎉,中奖了呢',
