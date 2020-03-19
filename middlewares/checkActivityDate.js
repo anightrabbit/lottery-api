@@ -11,7 +11,7 @@ async function checkActivityDate(req, res, next) {
 				err: true,
 			});
 		} else {
-			const activityInfo = getActivity(body.activity);
+			const activityInfo = await getActivity(body.activity);
 			if (!activityInfo) {
 				return res.send({
 					msg: '活动尚未开始或已经结束',
@@ -37,8 +37,7 @@ const getActivity = async (activity) => {
 			$gt: today
 		}
 	};
-	const activityInfo = await activityModel.findOne(query);
-	return activityInfo;
+	return activityModel.findOne(query);
 }
 
 module.exports = checkActivityDate;

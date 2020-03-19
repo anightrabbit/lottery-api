@@ -16,7 +16,8 @@ async function updateMemberDrawRecord(req, res, next) {
 		createPrizeRecord({memberId: body.memberId, prizeNo});
 		return res.send({
 			data: req.prizeInfo,
-			msg:'🎉🎉🎉,中奖了呢'
+			msg:'🎉🎉🎉,中奖了呢',
+			todayDrawRest:req.todayDrawRest, // 今日剩余抽奖次数
 		});
 		next();
 	} catch (e) {

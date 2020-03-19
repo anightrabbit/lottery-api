@@ -1,9 +1,11 @@
 // 需求：每个会员每天抽奖次数不能超过限制
 
+const moment = require('moment');
 const prizeRecordModel = require('../models/prizeRecord.model');
 
 async function checkMemberDrawRecord (req, res, next) {
 	try {
+		const {memberId} = req.body;
 		const records = await prizeRecordModel.find({memberId});
 		if (records && records.length > req.activityInfo.drawLimitTotal) {
 			return res.send({
