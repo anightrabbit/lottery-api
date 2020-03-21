@@ -2,7 +2,8 @@ var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 // 测试账户:test,test123456,read-only
-// mongodb://<dbuser>:<dbpassword>@ds155747.mlab.com:55747/demo
+// 线上地址mongodb://<dbuser>:<dbpassword>@ds155747.mlab.com:55747/demo
+// 本地地址mongodb://test:test123456@127.0.0.1:27017:/demo
 var DB_user = encodeURIComponent('test');
 var DB_password = encodeURIComponent('test123456');
 var DB_url = `mongodb://${DB_user}:${DB_password}@ds155747.mlab.com:55747/demo`;

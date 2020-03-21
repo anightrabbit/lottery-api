@@ -4,6 +4,8 @@
 
 ### config目录，API配置信息
 + prizeData.js文件配置奖池信息，各种需求限制自由配置，开启中间件，自由搭配。
++ mongodb配置本地开发环境 “mongodb://test:test123456@127.0.0.1:27017:/demo”
++ updatedb.js帮助导入奖池数据和抽奖活动数据
 
 ### models目录，MonogoDB数据模型
 + prizeActivity.model.js记录抽奖活动信息
