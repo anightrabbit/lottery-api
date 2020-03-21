@@ -24,6 +24,9 @@
 + drawPrize.js 生成随机数对应奖池的奖品编号，确定是否中奖
 + updateMemberDrawRecord.js 更新会员抽奖记录
 
+### public目录
+用react写了一个九宫格类型的抽奖demo，备注[目录下有隐藏福利]
+
 
 ### 抽奖请求示例
 
