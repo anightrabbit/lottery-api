@@ -1,0 +1,133 @@
+* {
+	margin: 0;
+	padding:0;
+}
+body {
+	background: #f5f5f5;
+}
+#app {
+	max-width: 640px;
+	min-width: 320px;
+	width: 100%;
+	margin: 0 auto;
+	background: #FFEBBB;
+	height: 100vh;
+}
+.title {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+.container {
+	/*padding: 20px;*/
+	/*background: red;*/
+}
+.container-inner {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+  grid-template-columns: repeat(4, 62px);
+  grid-template-rows: repeat(4, 53px);
+  grid-row-gap: 4px;
+  grid-column-gap: 4px;
+}
+.container-inner .inner-item {
+	width: 62px;
+	height: 53px;
+	background-color:rgba(255,205,85,0.5);
+	border-radius:7px;
+	overflow: hidden;
+	text-align: center;
+	position: relative;
+}
+
+.inner-item::before {
+	content:attr(data-order);
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	text-align: center;
+	font-size: 12px;
+	line-height: 12px;
+	font-style: italic;
+	color: #FFF;
+	width: 14px;
+	height: 14px;
+	border-radius: 7px;
+	background: red;
+}
+.inner-item {
+	width: 100%;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: block;
+	/*opacity: .5;*/
+}
+.inner-item .text {
+	display: none;
+	font-size: 12px;
+	font-family: all;
+	color: #333;
+}
+.inner-item.item-center {
+	grid-column-start: span 2;
+	grid-row-start: span 2;
+	margin: 0 auto;
+	width: 120px;
+	height: 96px;
+	border-radius: 20px;
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: center;
+	background: none;
+	font-size: 12px;
+	color: red;
+}
+.inner-item.item-center::before {
+	display: none;
+}
+.inner-item.highlight {
+	background-color:rgba(255,205,85,1);
+}
+
+button {
+	border:none;
+	outline: none;
+}
+button.click-me {
+	border: none;
+	outline: none;
+	position: relative;
+	top: 0;
+	color: rgba(255,255,255,1);
+	text-decoration: none;
+	background-color: rgba(219,87,5,1);
+	font-weight: 500;
+	font-size: 20px;
+	display: block;
+	padding: 4px;
+	margin-bottom: 16px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	-webkit-box-shadow: 0px 4px 0px rgba(219,31,5,1), 0px 4px 25px rgba(0,0,0,.2);
+	-moz-box-shadow: 0px 4px 0px rgba(219,31,5,1), 0px 4px 25px rgba(0,0,0,.2);
+	box-shadow: 0px 4px 0px rgba(219,31,5,1), 0px 4px 25px rgba(0,0,0,.2);
+	width: 100px;
+	text-align: center;
+	
+	-webkit-transition: all .1s ease;
+	-moz-transition: all .1s ease;
+	-ms-transition: all .1s ease;
+	-o-transition: all .1s ease;
+	transition: all .1s ease;
+}
+
+button.disable {
+	opacity: .5;
+	-webkit-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+	-moz-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+	box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+	top: 2px;
+}
