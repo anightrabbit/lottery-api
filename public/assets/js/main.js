@@ -103,7 +103,7 @@ const Pool = (props) => {
 	const fetchPrize = () => {
 		setLoading(true);
 		animationActionStart(orderListLength);
-		const randomLevel = getRandomNumber(11);
+		const randomLevel = getRandomNumber(orderListLength - 1);
 		setTimeout(()=>{
 			animationActionEnd(randomLevel);
 		},150 * randomLevel + 150 * orderListLength * 3);
