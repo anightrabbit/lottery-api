@@ -6,8 +6,10 @@ mongoose.Promise = global.Promise;
 // 本地地址mongodb://test:test123456@127.0.0.1:27017:/demo
 var DB_user = encodeURIComponent('test');
 var DB_password = encodeURIComponent('test123456');
-// var DB_url = `mongodb://${DB_user}:${DB_password}@ds155747.mlab.com:55747/demo`;
-var DB_url = 'mongodb://test:test123456@127.0.0.1:27017:/demo';
+var DB_host_local = '127.0.0.1:27017'
+var DB_host = 'ds155747.mlab.com:55747';
+var DB_name = 'demo'
+var DB_url = `mongodb://${DB_user}:${DB_password}@${DB_host}/${DB_name}`;
 var options = {
 	useNewUrlParser: true,
 	autoIndex: false, // Don't build indexes

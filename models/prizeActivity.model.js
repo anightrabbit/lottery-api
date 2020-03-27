@@ -29,6 +29,9 @@ const PrizeActivitySchema = new Schema(
       type: Number, // 抽奖一次消耗多少积分
     },
     freeCode: String, // 参与抽奖的免费code
+    prizeSettingLimit: {
+      type: Array, // 中奖次数限制
+    }
   },
   {
     timestamps: {

@@ -17,7 +17,7 @@ async function updateMemberDrawRecord(req, res, next) {
 		return res.send({
 			data: req.prizeInfo,
 			msg:'🎉🎉🎉,中奖了呢',
-			todayDrawRest:req.todayDrawRest, // 今日剩余抽奖次数
+			todayDrawRest:req.todayDrawRest - 1, // 今日剩余抽奖次数
 		});
 		next();
 	} catch (e) {

@@ -18,16 +18,19 @@ module.exports = {
 			text: '免费游轮5天4晚',
 			type: 'form',
 			total: 5,
+			limit: 1, // 限制该奖每个会员最多只能中一次
 		},{
 			level: 3,
 			text: '免费住酒店3晚',
 			type: 'form',
 			total: 15,
+			limit: 1
 		},{
 			level: 4,
 			text: '奖励5000积分',
 			type: 'point',
 			total: 400,
+			limit: 1
 		},{
 			level: 5,
 			text: '优惠券满1000减500',
@@ -59,5 +62,6 @@ module.exports = {
 			type: 'lucky',
 			total: 3000,
 		}],
+		prizeSettingLimit: [0,1,1,1,0,0,0,0,0,0],
 	}],
 };

@@ -19,7 +19,7 @@ async function checkActivityLimit (req, res, next) {
 		    const date = moment(item.created_at).format('YYYYMMDD');
 		    return date === today;
 		  });
-		  req.todayDrawRest = req.activityInfo.drawLimitDay - todays.length - 1;
+		  req.todayDrawRest = req.activityInfo.drawLimitDay - todays.length;
 		}
 		if (!req.todayDrawRest) {
 			return res.send({
