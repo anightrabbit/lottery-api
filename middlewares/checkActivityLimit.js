@@ -7,7 +7,7 @@ async function checkActivityLimit (req, res, next) {
 		const {memberId} = req.body;
 		const records = req.drawRecords;
 		if (records && records.length > req.activityInfo.drawLimitTotal) {
-			return res.send({
+			res.send({
 				msg:'活动抽奖次数已全部用完',
 				err: true,
 			});
@@ -22,7 +22,7 @@ async function checkActivityLimit (req, res, next) {
 		  req.todayDrawRest = req.activityInfo.drawLimitDay - todays.length;
 		}
 		if (!req.todayDrawRest) {
-			return res.send({
+			res.send({
 				msg:'今日抽奖次数没有了，明天再来',
 				err: true,
 			});

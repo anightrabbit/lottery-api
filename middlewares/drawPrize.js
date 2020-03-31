@@ -16,11 +16,10 @@ async function drawPrize(req, res, next) {
 			req.prizeInfo = prizeInfo;
 		} else {
 			// 奖池已空
-			return res.send({
-				msg: '谢谢参与',
-				data: null,
-				prizeToken: -1,
-			});
+			 req.prizeInfo = {
+			 	prizeNo: -1,
+			 	prizeType: 'lucky'
+			 }
 		}
 		next();
 	} catch (e) {

@@ -14,9 +14,9 @@ async function updateMemberDrawRecord(req, res, next) {
 		});
 		// 保存会员抽奖记录
 		createPrizeRecord({memberId: body.memberId, prizeNo, prizeType});
-		return res.send({
+		res.send({
 			data: req.prizeInfo,
-			msg:'🎉🎉🎉,中奖了呢',
+			msg: prizeNo > -1 ? '恭喜中奖' : '谢谢参与',
 			todayDrawRest:req.todayDrawRest - 1, // 今日剩余抽奖次数
 		});
 		next();

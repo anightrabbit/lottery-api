@@ -6,7 +6,7 @@ async function checkMemberLuckyRecord(req, res, next) {
 		const records = req.drawRecords;
 		console.log('records', records);
 		const luckyRecords = records.filter(item => item.prizeType !== 'lucky' || item.prizeType === undefined);
-		return res.send({
+		res.send({
 			data: luckyRecords,
 			msg: '中奖纪录',
 		});

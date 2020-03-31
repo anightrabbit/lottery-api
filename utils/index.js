@@ -1,6 +1,6 @@
 // 需求：大数组中剔除一个小数组
 // 返回一个
-// prizeLimit['$or'] = [ { prizeNo: { $le: 1,$gt:6 } }];
+// prizeLimit['$and'] = [ { prizeNo: { $le: 1,$gt:6 } }];
 
 
 const formatPrizeSetting = (prizeSetting) => prizeSetting.filter(item => item.limit);

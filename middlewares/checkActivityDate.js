@@ -6,14 +6,14 @@ async function checkActivityDate(req, res, next) {
 	try {
 		const body = req.body;
 		if (!body.activity) {
-			return res.send({
+			res.send({
 				msg: '活动不存在',
 				err: true,
 			});
 		} else {
 			const activityInfo = await getActivity(body.activity);
 			if (!activityInfo) {
-				return res.send({
+				res.send({
 					msg: '活动尚未开始或已经结束',
 					err: true,
 				});

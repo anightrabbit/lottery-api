@@ -12,7 +12,7 @@ async function checkRestPrizePool(req, res, next) {
 		console.log(req.drawRecords.length,req.activityInfo.prizeSettingLimit);
 		if (req.drawRecords.length) {
 			const limits = filterLimitPrize(req.drawRecords,req.activityInfo.prizeSettingLimit);
-			if (limits.length) prizeLimit['$or'] =  limits;
+			if (limits.length) prizeLimit['$and'] =  limits;
 		}
 		const restPrizePool = await prizePoolModel.find(prizeLimit);
 		console.log('restPrizePool', restPrizePool.length);
@@ -20,7 +20,7 @@ async function checkRestPrizePool(req, res, next) {
 			req.restPrizePool = restPrizePool;
 			req.restPrizeNoList = restPrizePool.map(item => item.prizeNo);
 		} else {
-			return res.send({
+			res.send({
 				msg: '奖池已空，😢',
 			});
 		}
