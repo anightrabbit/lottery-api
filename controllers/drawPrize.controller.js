@@ -1,5 +1,6 @@
 const prizePoolModel = require('../models/prizePool.model');
 const prizeActivityModel = require('../models/prizeActivity.model');
+const prizeRecordModel = require('../models/prizeRecord.model');
 
 // res错误
 const handleError = (error, res) =>
@@ -61,7 +62,21 @@ const createAndUpdateForActivity = async (req, res) => {
   }
 };
 
+const updatePrizePool = async (prizeNo, updateOptions) => {
+  const result = await prizePoolModel.updateOne({
+    prizeNo
+  }, updateOptions);
+  console.log(result.n, result.nModified);
+}
+
+const createPrizeRecord = async (data) => {
+  const result = await prizeRecordModel.create(data);
+  console.log(result);
+}
+
 module.exports = {
   createAndUpdateForPrizePool,
-  createAndUpdateForActivity
+  createAndUpdateForActivity,
+  updatePrizePool,
+  createPrizeRecord
 };
