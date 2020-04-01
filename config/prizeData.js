@@ -3,7 +3,7 @@ module.exports = {
 		// drawLimitTime: 2, // 2分钟内只允许抽奖一次
 		freeCode: 'hello,github',
 		total: 9421,
-		drawLimitTotal: 10,// 参与抽奖总次数限制
+		drawLimitTotal: 10,// 中奖次数限制
 		drawLimitDay: 3, // 每天参与抽奖次数限制
 		drawLimitPoint: 100,// 参与抽奖每次需要消耗积分数量
 		startDate: '2020-03-01',// 抽奖活动开始时间
