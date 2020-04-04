@@ -29,6 +29,11 @@ const PrizePoolSchema = new Schema(
       type: Boolean, // 奖品被领取后，要更新
       default: false,
     },
+    couponCode: { // 优惠券券码，如果有
+      type: String,
+      unique: true,
+      trim: true,
+    }
   },
   {
     timestamps: {

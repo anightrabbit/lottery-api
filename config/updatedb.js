@@ -1,6 +1,7 @@
 const axios = require('axios');
 const _ = require('lodash');
 const DATA = require('./prizeData');
+const CouponCode = require('./prize.json');
 
 const dbURL1 = 'http://localhost:3000/api/activity/updatePrizePool';
 const dbURL2 = 'http://localhost:3000/api/activity/updateActivity';
@@ -33,12 +34,16 @@ const generatePrizePool = (poolConfig, activity) => {
 		activityItem.prizeSetting.map((prizeSettingItem, prizeSettingIndex) => {
 			for (let i = 0; i < prizeSettingItem.total; i++) {
 				num++;
-				prizes.push({
+				const item = {
 					prizeLevel: prizeSettingItem.level,
 					prizeType: prizeSettingItem.type,
 					prizeText: prizeSettingItem.text,
 					prizeNo: num,
-				});
+				};
+				if (CouponCode[prizeSettingItem.level] && CouponCode[prizeSettingItem.level].length) {
+					item.couponCode = CouponCode[prizeSettingItem.level][i];
+				}
+				prizes.push(item);
 			}
 		});
 	});
@@ -65,4 +70,4 @@ const chunkData = (url, data) => {
 };
 
 update(dbURL2, allActivityData);
-// chunkData(dbURL1, allPrize);
+chunkData(dbURL1, allPrize);
